@@ -4,13 +4,11 @@ import StarredItem from './StarredItem';
 
 function StarredList({starredRepos}) {
     return (
-        <div className="starred-list">
-            <List>
-                {
-                    starredRepos.map(repo => <StarredItem key={repo.id} repo={repo} />)
-                }
-            </List>
-        </div>
+        <List>
+            {
+                starredRepos.map(repo => <StarredItem key={repo.id} repo={repo} />)
+            }
+        </List>
     );
 }
 

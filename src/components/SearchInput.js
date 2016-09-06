@@ -35,13 +35,16 @@ export default class SearchInput extends React.Component {
         return (
             <div style={searchInputStyles.inputBox}>
                 <form onSubmit={this.submit}>
-                    <TextField
-                        id="text-field-controlled"
-                        hintText="Enter a GitHub Username"
-                        floatingLabelText="GitHub Username"
-                        value={this.state.value}
-                        onChange={this.handleChange}
-                        />
+                    <div>
+                        <TextField
+                            id="text-field-controlled"
+                            hintText="Enter a GitHub Username"
+                            floatingLabelText="GitHub Username"
+                            value={this.state.value}
+                            onChange={this.handleChange}
+                            />
+                    </div>
+
                     <RaisedButton
                         label="Search GitHub"
                         primary={true}
