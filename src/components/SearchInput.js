@@ -13,7 +13,7 @@ export default class SearchInput extends React.Component {
         super(props);
 
         this.state = {
-            value: '',
+            value: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
