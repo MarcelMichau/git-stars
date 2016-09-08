@@ -7,6 +7,9 @@ import LoadingIndicator from './LoadingIndicator';
 const starsContainerStyles = {
     loadMoreButton: {
         margin: '15px'
+    },
+    avatarImage: {
+        borderRadius: '40px'
     }
 }
 
@@ -20,7 +23,8 @@ class StarsContainer extends React.Component {
             pageCount: 1,
             username: '',
             repos: [],
-            notFound: false
+            notFound: false,
+            avatarUrl: ''
         }
 
         this.doSearch = this.doSearch.bind(this);
@@ -35,7 +39,11 @@ class StarsContainer extends React.Component {
             isLoading: true
         });
 
-        const response = await fetch(`https://api.github.com/users/${this.state.username}/starred?page=${this.state.pageCount}`);
+        const headers = new Headers({
+            'Accept': 'application/vnd.github.v3.star+json'
+        });
+
+        const response = await fetch(`https://api.github.com/users/${this.state.username}/starred?page=${this.state.pageCount}`, {headers});
 
         if (response.status === 404) {
             this.setState({
@@ -47,13 +55,17 @@ class StarsContainer extends React.Component {
         }
         const result = await response.json();
 
+        const avatarUrlResponse = await fetch(`https://api.github.com/users/${this.state.username}`);
+        const avatarUrlResult = await avatarUrlResponse.json();
+
         this.setState({
             repos: [
                 ...this.state.repos,
                 ...result
             ],
             hasCalledApi: true,
-            isLoading: false
+            isLoading: false,
+            avatarUrl: avatarUrlResult.avatar_url
         });
     }
 
@@ -90,6 +102,7 @@ class StarsContainer extends React.Component {
         return (
             <div>
                 <SearchInput onSubmit={(username) => this.updateUser(username) }/>
+                {this.state.avatarUrl && <img src={this.state.avatarUrl} alt="avatar" height="75" style={starsContainerStyles.avatarImage}/>}
                 { content }
                 {this.state.isLoading && <LoadingIndicator />}
                 {

@@ -1,31 +1,27 @@
 import React from 'react';
 import {ListItem} from 'material-ui/List';
 import ActionGrade from 'material-ui/svg-icons/action/grade';
+import moment from 'moment';
 
 const starredItemStyles = {
-    description: {
-        fontSize: '12px'
-    },
-    starGazers: {
-        fontSize: '12px'
-    },
-    language: {
+    smallerFont: {
         fontSize: '12px'
     }
 }
 
 function StarredItem({ repo }) {
+    const starredDate = repo.starred_at;
+    const repoContent = repo.repo; 
     return (
-        <ListItem leftIcon={<ActionGrade />} onClick={() => { window.open(repo.html_url) } }>
+        <ListItem leftIcon={<ActionGrade />} onClick={() => { window.open(repoContent.html_url) } }>
             <div>
-                {repo.full_name}
+                {repoContent.full_name}
             </div>
-            <div style={starredItemStyles.description}>
-                <i>{repo.description}</i>
-            </div>
-            <small style={starredItemStyles.starGazers}>{repo.stargazers_count} stars</small>
-            <div style={starredItemStyles.language}>
-                {repo.language && <small>{repo.language}</small>}
+            <div style={starredItemStyles.smallerFont}>
+                <i>{repoContent.description}</i>
+                <div style={starredItemStyles.starGazers}>{repoContent.stargazers_count} stars</div>
+                {repoContent.language && <div>{repoContent.language}</div>}
+                Starred on: {moment(starredDate).format('dddd, MMMM Do YYYY, H:mm')}
             </div>
         </ListItem>
     );

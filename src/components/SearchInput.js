@@ -4,7 +4,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 const searchInputStyles = {
     inputBox: {
-        marginLeft: '20px'
+        marginLeft: '20px',
+        marginRight: '20px',
+        display: 'inline-block'
     }
 }
 
