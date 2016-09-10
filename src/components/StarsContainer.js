@@ -3,6 +3,7 @@ import StarredList from './StarredList';
 import SearchInput from './SearchInput';
 import RaisedButton from 'material-ui/RaisedButton';
 import LoadingIndicator from './LoadingIndicator';
+import githubService from '../services/githubService';
 
 const starsContainerStyles = {
     loadMoreButton: {
@@ -39,11 +40,7 @@ class StarsContainer extends React.Component {
             isLoading: true
         });
 
-        const headers = new Headers({
-            'Accept': 'application/vnd.github.v3.star+json'
-        });
-
-        const response = await fetch(`https://api.github.com/users/${this.state.username}/starred?page=${this.state.pageCount}`, {headers});
+        const response = await githubService().getUserStarredRepos(this.state.username, this.state.pageCount);
 
         if (response.status === 404) {
             this.setState({
@@ -55,7 +52,7 @@ class StarsContainer extends React.Component {
         }
         const result = await response.json();
 
-        const avatarUrlResponse = await fetch(`https://api.github.com/users/${this.state.username}`);
+        const avatarUrlResponse = await githubService().getUserAvatar(this.state.username);
         const avatarUrlResult = await avatarUrlResponse.json();
 
         this.setState({
@@ -72,18 +69,14 @@ class StarsContainer extends React.Component {
     loadMoreRepos() {
         this.setState({
             pageCount: this.state.pageCount + 1
-        }, () => {
-            this.doSearch();
-        });
+        }, this.doSearch);
     }
 
     updateUser(username) {
         this.setState({
             username,
             repos: []
-        }, () => {
-            this.doSearch();
-        })
+        }, this.doSearch);
     }
 
     render() {
