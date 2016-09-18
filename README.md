@@ -4,4 +4,4 @@ This app allows you to search for a GitHub user, and display their starred repos
 
 Built using [Create React App](https://github.com/facebookincubator/create-react-app)
 
-DEMO: [Surge.sh](http://raspy-lumber.surge.sh/)
+DEMO: [Surge.sh](http://elated-skin.surge.sh/)
