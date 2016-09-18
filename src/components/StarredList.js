@@ -2,7 +2,7 @@ import React from 'react';
 import {List} from 'material-ui/List';
 import StarredItem from './StarredItem';
 
-function StarredList({starredRepos}) {
+export default function StarredList({starredRepos}) {
     return (
         <List>
             {
@@ -11,5 +11,3 @@ function StarredList({starredRepos}) {
         </List>
     );
 }
-
-export default StarredList;

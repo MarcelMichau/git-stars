@@ -8,9 +8,11 @@
   "dependencies": {
     "halogen": "^0.2.0",
     "material-ui": "^0.15.4",
-    "moment": "^2.14.1",
+    "moment": "^2.15.0",
     "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "react-router": "^4.0.0-2",
+    "react-tap-event-plugin": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

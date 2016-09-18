@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -10,26 +10,23 @@ const searchInputStyles = {
     }
 }
 
-export default class SearchInput extends React.Component {
+export default class SearchInput extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             value: ''
         };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.submit = this.submit.bind(this);
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({
             value: event.target.value,
         });
     };
 
-    submit(e) {
-        e.preventDefault();
+    submit = (event) => {
+        event.preventDefault();
         this.props.onSubmit(this.state.value);
     }
 

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import StarredList from './StarredList';
 import SearchInput from './SearchInput';
 import RaisedButton from 'material-ui/RaisedButton';
 import LoadingIndicator from './LoadingIndicator';
-import githubService from '../services/githubService';
+import { getUserStarredRepos, getUserAvatar } from '../services/githubService';
 
 const starsContainerStyles = {
     loadMoreButton: {
@@ -14,7 +14,7 @@ const starsContainerStyles = {
     }
 }
 
-class StarsContainer extends React.Component {
+export default class StarsContainer extends Component {
     constructor(props) {
         super(props);
 
@@ -27,20 +27,16 @@ class StarsContainer extends React.Component {
             notFound: false,
             avatarUrl: ''
         }
-
-        this.doSearch = this.doSearch.bind(this);
-        this.loadMoreRepos = this.loadMoreRepos.bind(this);
-        this.updateUser = this.updateUser.bind(this);
     }
 
-    async doSearch() {
+    doSearch = async () => {
         this.setState({
             hasCalledApi: false,
             notFound: false,
             isLoading: true
         });
 
-        const response = await githubService().getUserStarredRepos(this.state.username, this.state.pageCount);
+        const response = await getUserStarredRepos(this.state.username, this.state.pageCount);
 
         if (response.status === 404) {
             this.setState({
@@ -52,7 +48,7 @@ class StarsContainer extends React.Component {
         }
         const result = await response.json();
 
-        const avatarUrlResponse = await githubService().getUserAvatar(this.state.username);
+        const avatarUrlResponse = await getUserAvatar(this.state.username);
         const avatarUrlResult = await avatarUrlResponse.json();
 
         this.setState({
@@ -66,13 +62,13 @@ class StarsContainer extends React.Component {
         });
     }
 
-    loadMoreRepos() {
+    loadMoreRepos = () => {
         this.setState({
             pageCount: this.state.pageCount + 1
         }, this.doSearch);
     }
 
-    updateUser(username) {
+    updateUser = (username) => {
         this.setState({
             username,
             repos: []
@@ -111,5 +107,3 @@ class StarsContainer extends React.Component {
         );
     }
 }
-
-export default StarsContainer;

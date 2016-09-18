@@ -9,7 +9,7 @@ const starredItemStyles = {
     }
 }
 
-function StarredItem({ repo }) {
+export default function StarredItem({ repo }) {
     const starredDate = repo.starred_at;
     const repoContent = repo.repo; 
     return (
@@ -26,5 +26,3 @@ function StarredItem({ repo }) {
         </ListItem>
     );
 }
-
-export default StarredItem;
