@@ -7,10 +7,15 @@ import { getUserStarredRepos, getUserAvatar } from '../services/githubService';
 
 const starsContainerStyles = {
     loadMoreButton: {
-        margin: '15px'
+        margin: '15px',
+        marginTop: '200px'
     },
     avatarImage: {
         borderRadius: '40px'
+    },
+    center: {
+        display: 'flex',
+        justifyContent: 'center'
     }
 }
 
@@ -96,12 +101,14 @@ export default class StarsContainer extends Component {
                 {this.state.isLoading && <LoadingIndicator />}
                 {
                     (hasMoreThanDefaultNumberOfRepos) &&
-                    <RaisedButton
-                        label="Load More"
-                        primary={true}
-                        onClick={this.loadMoreRepos}
-                        style={starsContainerStyles.loadMoreButton}
-                        />
+                    <div style={starsContainerStyles.center}>
+                        <RaisedButton
+                            label="Load More"
+                            primary={true}
+                            onClick={this.loadMoreRepos}
+                            style={starsContainerStyles.loadMoreButton}
+                            />
+                    </div>
                 }
             </div>
         );
