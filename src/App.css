@@ -1,16 +1,8 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
-
-html {
-    background: rgb(48, 48, 48);
-}
-
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px rgb(48, 48, 48) inset;
-    box-shadow: 0 0 0px 1000px rgb(48, 48, 48) inset;
-    -webkit-text-fill-color: white;
-}
-
 .custom-content {
     margin: 20px;
     padding-bottom: 20px;
+}
+
+.pusher {
+    margin-top: 5em;
 }

@@ -1,14 +1,4 @@
-import React, { Component } from 'react'
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-
-const searchInputStyles = {
-    inputBox: {
-        marginLeft: '20px',
-        marginRight: '20px',
-        display: 'inline-block'
-    }
-}
+import React, { Component } from 'react';
 
 export default class SearchInput extends Component {
     constructor(props) {
@@ -32,23 +22,19 @@ export default class SearchInput extends Component {
 
     render() {
         return (
-            <div style={searchInputStyles.inputBox}>
-                <form onSubmit={this.submit}>
-                    <div>
-                        <TextField
-                            id="text-field-controlled"
-                            hintText="Enter a GitHub Username"
-                            floatingLabelText="GitHub Username"
+            <div className="ui container">
+                <form className="ui form" onSubmit={this.submit}>
+                    <div className="field">
+                        <label>Github Username</label>
+                        <input
+                            type="text"
+                            name="first-name"
+                            placeholder="First Name"
                             value={this.state.value}
                             onChange={this.handleChange}
                             />
                     </div>
-
-                    <RaisedButton
-                        label="Search GitHub"
-                        primary={true}
-                        type="submit"
-                        />
+                    <button className="ui primary button" type="submit">Search Github</button>
                 </form>
             </div>
         );

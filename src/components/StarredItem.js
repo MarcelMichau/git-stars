@@ -1,5 +1,4 @@
 import React from 'react';
-import { ListItem } from 'material-ui/List';
 import NiceDateify from './NiceDateify';
 import 'font-awesome/css/font-awesome.css';
 
@@ -34,30 +33,25 @@ export default function StarredItem({ repo }) {
     const starredDate = repo.starred_at;
     const repoContent = repo.repo;
     return (
-        <ListItem onClick={() => { window.open(repoContent.html_url) } }>
-            <div style={starredItemStyles.center}>
-                <img src={repoContent.owner.avatar_url} alt="Repo Avatar" height="75" style={starredItemStyles.avatarImage}/>
+        <div className="ui card" onClick={() => { window.open(repoContent.html_url) } }>
+            <div className="image">
+                <img src={repoContent.owner.avatar_url} alt="Repo Avatar"/>
             </div>
-            <div style={starredItemStyles.center}>
-                {repoContent.full_name}
-            </div>
-
-            <div style={starredItemStyles.centerAndJustified}>
-                <i style={starredItemStyles.smallerFont}>{repoContent.description}</i>
-            </div>
-            
-            <div style={starredItemStyles.smallerFont}>
-                <div style={starredItemStyles.center}>
+            <div className="content">
+                <a className="header">{repoContent.full_name}</a>
+                <div className="meta">
+                    <span className="date">Starred on: <NiceDateify date={starredDate}/></span>
+                </div>
+                <div className="description">
                     <i style={starredItemStyles.starIcon} className="fa fa-star" aria-hidden="true"></i>
                     <span>{repoContent.stargazers_count}</span>
                 </div>
-                <div style={starredItemStyles.center}>
-                    <div>Starred on: <NiceDateify date={starredDate}/></div>
-                </div>
-                <div style={starredItemStyles.center}>
-                    {repoContent.language && <div>{repoContent.language}</div>}
-                </div>
             </div>
-        </ListItem>
+            <div className="extra content">
+                <a>
+                {repoContent.language && <div>{repoContent.language}</div>}
+                </a>
+            </div>
+        </div>
     );
 }

@@ -3,20 +3,19 @@ import { BrowserRouter, Match } from 'react-router';
 import AppNavBar from './components/AppNavBar';
 import StarsContainer from './components/StarsContainer';
 import About from './components/About';
-import Paper from 'material-ui/Paper';
 import './App.css';
 
 export default class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <BrowserRouter>
           <div>
             <AppNavBar />
-            <Paper>
+            <div className="pusher">
               <Match exactly pattern="/" component={StarsContainer} />
               <Match pattern="/about" component={About} />
-            </Paper>
+            </div>
           </div>
         </BrowserRouter>
       </div>

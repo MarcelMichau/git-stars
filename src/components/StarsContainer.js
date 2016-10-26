@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import StarredList from './StarredList';
-import SearchInput from './SearchInput';
-import RaisedButton from 'material-ui/RaisedButton';
+import InputWithAvatar from './InputWithAvatar';
 import LoadingIndicator from './LoadingIndicator';
 import { getUserStarredRepos, getUserAvatar } from '../services/githubService';
 
@@ -95,19 +94,18 @@ export default class StarsContainer extends Component {
 
         return (
             <div>
-                <SearchInput onSubmit={(username) => this.updateUser(username) }/>
-                {this.state.avatarUrl && <img src={this.state.avatarUrl} alt="avatar" height="75" style={starsContainerStyles.avatarImage}/>}
+                <InputWithAvatar onSubmit={this.UpdateUser}/>
                 { content }
                 {this.state.isLoading && <LoadingIndicator />}
                 {
                     (hasMoreThanDefaultNumberOfRepos) &&
                     <div style={starsContainerStyles.center}>
-                        <RaisedButton
-                            label="Load More"
-                            primary={true}
+                        <button
+                            className="ui button"
                             onClick={this.loadMoreRepos}
-                            style={starsContainerStyles.loadMoreButton}
-                            />
+                            style={starsContainerStyles.loadMoreButton}>
+                            Load More
+                        </button>
                     </div>
                 }
             </div>

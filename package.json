@@ -3,17 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "react-scripts": "^0.4.2"
+    "react-scripts": "^0.7.0"
   },
   "dependencies": {
-    "font-awesome": "^4.6.3",
+    "font-awesome": "^4.7.0",
     "halogen": "^0.2.0",
-    "material-ui": "^0.15.4",
-    "moment": "^2.15.0",
+    "material-ui": "^0.16.1",
+    "moment": "^2.15.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^4.0.0-2",
-    "react-tap-event-plugin": "^1.0.0"
+    "react-tap-event-plugin": "^1.0.0",
+    "semantic-ui": "^2.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
