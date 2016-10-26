@@ -29,12 +29,15 @@ export default class SearchInput extends Component {
                         <input
                             type="text"
                             name="first-name"
-                            placeholder="First Name"
+                            placeholder="Enter your Github Username"
                             value={this.state.value}
                             onChange={this.handleChange}
                             />
                     </div>
-                    <button className="ui primary button" type="submit">Search Github</button>
+                    <button className="ui right labeled icon primary button" type="submit">
+                        <i className="search icon"></i>
+                        Search Github
+                    </button>
                 </form>
             </div>
         );
