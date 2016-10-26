@@ -3,26 +3,6 @@ import NiceDateify from './NiceDateify';
 import 'font-awesome/css/font-awesome.css';
 
 const starredItemStyles = {
-    smallerFont: {
-        fontSize: '12px'
-    },
-    center: {
-        display: 'flex',
-        justifyContent: 'center',
-        marginTop: '5px',
-        marginBottom: '5px'
-    },
-    centerAndJustified: {
-        display: 'flex',
-        justifyContent: 'center',
-        marginTop: '5px',
-        marginBottom: '5px',
-        textAlign: 'justify',
-        textAlignLast: 'center'
-    },
-    avatarImage: {
-        borderRadius: '40px'
-    },
     starIcon: {
         paddingTop: '2px',
         marginRight: '2px'

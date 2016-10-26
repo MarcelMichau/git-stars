@@ -94,7 +94,7 @@ export default class StarsContainer extends Component {
 
         return (
             <div>
-                <InputWithAvatar onSubmit={this.UpdateUser}/>
+                <InputWithAvatar onSubmit={this.updateUser} avatarUrl={this.state.avatarUrl}/>
                 { content }
                 {this.state.isLoading && <LoadingIndicator />}
                 {
