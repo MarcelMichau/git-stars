@@ -2,7 +2,7 @@ import React from 'react';
 import Halogen from 'halogen';
 
 export default function LoadingIndicator() {
-        const color = 'rgb(0, 151, 167)';
+        const color = '#2185D0';
 
         const style = {
             display: 'flex',

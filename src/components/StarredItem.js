@@ -20,6 +20,9 @@ export default function StarredItem({ repo }) {
             <div className="content">
                 <a className="header">{repoContent.full_name}</a>
                 <div className="meta">
+                    {repoContent.description}
+                </div>
+                <div className="meta">
                     <span className="date">Starred on: <NiceDateify date={starredDate}/></span>
                 </div>
                 <div className="description">
