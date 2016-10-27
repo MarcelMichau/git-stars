@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import StarredList from './StarredList';
 import InputWithAvatar from './InputWithAvatar';
 import LoadingIndicator from './LoadingIndicator';
+import ReadmeModal from './ReadmeModal';
 import { getUserStarredRepos, getUserAvatar } from '../services/githubService';
 
 const starsContainerStyles = {
@@ -29,7 +30,9 @@ export default class StarsContainer extends Component {
             username: '',
             repos: [],
             notFound: false,
-            avatarUrl: ''
+            avatarUrl: '',
+            isModalOpen: false,
+            selectedRepo: {}
         }
     }
 
@@ -79,6 +82,19 @@ export default class StarsContainer extends Component {
         }, this.doSearch);
     }
 
+    openReadMeModal = (repo) => {
+        this.setState({
+            selectedRepo: repo,
+            isModalOpen: true
+        });
+    }
+
+    closeReadMeModal = (repo) => {
+        this.setState({
+            isModalOpen: false
+        });
+    }
+
     render() {
         let content;
         const hasMoreThanDefaultNumberOfRepos = this.state.repos.length > 29;
@@ -87,7 +103,7 @@ export default class StarsContainer extends Component {
         if (this.state.notFound)
             content = <div className="custom-content">User Not Found :(</div>;
         else 
-            content = <StarredList starredRepos={this.state.repos}/>;
+            content = <StarredList openModal={this.openReadMeModal} starredRepos={this.state.repos}/>;
 
         if (hasNoStarredRepos && this.state.hasCalledApi && !this.state.notFound)
             content = <div className="custom-content">This user does not use one of Github's best features :(</div>;
@@ -108,6 +124,7 @@ export default class StarsContainer extends Component {
                         </button>
                     </div>
                 }
+                <ReadmeModal repoDetails={this.state.selectedRepo} isOpen={this.state.isModalOpen} onClose={this.closeReadMeModal}/>
             </div>
         );
     }

@@ -1,40 +1,38 @@
 import React from 'react';
 import NiceDateify from './NiceDateify';
-import 'font-awesome/css/font-awesome.css';
 
-const starredItemStyles = {
-    starIcon: {
-        paddingTop: '2px',
-        marginRight: '2px'
-    }
-}
-
-export default function StarredItem({ repo }) {
+const StarredItem = ({repo, openModal}) => {
     const starredDate = repo.starred_at;
     const repoContent = repo.repo;
+
     return (
-        <div className="ui card" onClick={() => { window.open(repoContent.html_url) } }>
-            <div className="image">
-                <img src={repoContent.owner.avatar_url} alt="Repo Avatar"/>
-            </div>
+        <div className="ui card" onClick={() => { openModal(repo) } }>
             <div className="content">
                 <a className="header">{repoContent.full_name}</a>
+            </div>
+            <div className="image">
+                <img src={repoContent.owner.avatar_url} alt="Repo Avatar" />
+            </div>
+            <div className="content">
+                <span className="right floated">
+                    <i className="star icon" aria-hidden="true"></i>
+                    <span>{repoContent.stargazers_count}</span>
+                </span>
                 <div className="meta">
-                    {repoContent.description}
-                </div>
-                <div className="meta">
-                    <span className="date">Starred on: <NiceDateify date={starredDate}/></span>
+                    <span className="date">Starred on: <NiceDateify date={starredDate} /></span>
                 </div>
                 <div className="description">
-                    <i style={starredItemStyles.starIcon} className="fa fa-star" aria-hidden="true"></i>
-                    <span>{repoContent.stargazers_count}</span>
+                    {repoContent.description}
                 </div>
             </div>
             <div className="extra content">
                 <a>
-                {repoContent.language && <div>{repoContent.language}</div>}
+                    <i className="file code outline icon"></i>
+                    {repoContent.language ? <span>{repoContent.language}</span> : <span>Unknown</span>}
                 </a>
             </div>
         </div>
     );
-}
+};
+
+export default StarredItem;
