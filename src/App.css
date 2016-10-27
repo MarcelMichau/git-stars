@@ -6,3 +6,7 @@
 .pusher {
     margin-top: 5em;
 }
+
+.ReactModal__Body--open {
+    overflow-y: hidden;
+}
