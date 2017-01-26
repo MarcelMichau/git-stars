@@ -3,10 +3,10 @@
     padding-bottom: 20px;
 }
 
-.pusher {
-    margin-top: 5em;
-}
-
 .ReactModal__Body--open {
     overflow-y: hidden;
+}
+
+img {
+    max-width: 100%;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Form } from 'semantic-ui-react';
 
 export default class SearchInput extends Component {
     constructor(props) {
@@ -22,24 +23,13 @@ export default class SearchInput extends Component {
 
     render() {
         return (
-            <div className="ui container">
-                <form className="ui form" onSubmit={this.submit}>
-                    <div className="field">
-                        <label>Github Username</label>
-                        <input
-                            type="text"
-                            name="first-name"
-                            placeholder="Enter your Github Username"
-                            value={this.state.value}
-                            onChange={this.handleChange}
-                            />
-                    </div>
-                    <button className="ui right labeled icon primary button" type="submit">
-                        <i className="search icon"></i>
-                        Search Github
-                    </button>
-                </form>
-            </div>
+            <Form onSubmit={this.submit}>
+                <Form.Field>
+                    <label>Github Username</label>
+                    <input type="text" name="github-username" placeholder="Enter your Github Username" value={this.state.value} onChange={this.handleChange}/>
+                </Form.Field>
+                <Button primary type="submit" content="Search Github" icon="search" labelPosition="right" />
+            </Form>
         );
     }
 }

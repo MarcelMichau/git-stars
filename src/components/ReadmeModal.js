@@ -75,9 +75,13 @@ class ReadmeModal extends Component {
     render() {
         return (
             <div>
-                <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} style={customStyles}>
-                    {this.state.isLoading ? <LoadingIndicator /> : <div dangerouslySetInnerHTML={this.state.readme}></div>}
-                </Modal>
+                {
+                    this.props.repoDetails.repo &&
+                        <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} style={customStyles} contentLabel={this.props.repoDetails.repo.name}>
+                            {this.state.isLoading ? <LoadingIndicator /> : <div style={{width: '100%'}} dangerouslySetInnerHTML={this.state.readme}></div>}
+                        </Modal>
+                }
+                
             </div >
         );
     }

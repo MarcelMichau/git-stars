@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import StarredList from './StarredList';
+import StarredGrid from './StarredGrid';
 import InputWithAvatar from './InputWithAvatar';
 import LoadingIndicator from './LoadingIndicator';
 import ReadmeModal from './ReadmeModal';
 import { getUserStarredRepos, getUserAvatar } from '../services/githubService';
+import { Button } from 'semantic-ui-react';
 
 const starsContainerStyles = {
     loadMoreButton: {
@@ -17,7 +18,7 @@ const starsContainerStyles = {
         display: 'flex',
         justifyContent: 'center'
     }
-}
+};
 
 export default class StarsContainer extends Component {
     constructor(props) {
@@ -58,20 +59,24 @@ export default class StarsContainer extends Component {
         const avatarUrlResponse = await getUserAvatar(this.state.username);
         const avatarUrlResult = await avatarUrlResponse.json();
 
-        this.setState({
-            repos: [
-                ...this.state.repos,
-                ...result
-            ],
-            hasCalledApi: true,
-            isLoading: false,
-            avatarUrl: avatarUrlResult.avatar_url
+        this.setState((prevState) => {
+            return {
+                repos: [
+                    ...prevState.repos,
+                    ...result
+                ],
+                hasCalledApi: true,
+                isLoading: false,
+                avatarUrl: avatarUrlResult.avatar_url
+            }
         });
     }
 
     loadMoreRepos = () => {
-        this.setState({
-            pageCount: this.state.pageCount + 1
+        this.setState((prevState) => {
+            return {
+                pageCount: prevState.pageCount + 1
+            }
         }, this.doSearch);
     }
 
@@ -102,29 +107,28 @@ export default class StarsContainer extends Component {
 
         if (this.state.notFound)
             content = <div className="custom-content">User Not Found :(</div>;
-        else 
-            content = <StarredList openModal={this.openReadMeModal} starredRepos={this.state.repos}/>;
+        else
+            content = <StarredGrid openModal={this.openReadMeModal} starredRepos={this.state.repos} />;
 
         if (hasNoStarredRepos && this.state.hasCalledApi && !this.state.notFound)
             content = <div className="custom-content">This user does not use one of Github's best features :(</div>;
 
         return (
             <div>
-                <InputWithAvatar onSubmit={this.updateUser} avatarUrl={this.state.avatarUrl}/>
-                { content }
+                <InputWithAvatar onSubmit={this.updateUser} avatarUrl={this.state.avatarUrl} />
+                {content}
                 {this.state.isLoading && <LoadingIndicator />}
                 {
                     (hasMoreThanDefaultNumberOfRepos) &&
                     <div style={starsContainerStyles.center}>
-                        <button
-                            className="ui button"
+                        <Button 
                             onClick={this.loadMoreRepos}
                             style={starsContainerStyles.loadMoreButton}>
                             Load More
-                        </button>
+                        </Button>
                     </div>
                 }
-                <ReadmeModal repoDetails={this.state.selectedRepo} isOpen={this.state.isModalOpen} onClose={this.closeReadMeModal}/>
+                <ReadmeModal repoDetails={this.state.selectedRepo} isOpen={this.state.isModalOpen} onClose={this.closeReadMeModal} />
             </div>
         );
     }
