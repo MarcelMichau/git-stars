@@ -2,15 +2,15 @@ import React from 'react';
 import NiceDateify from './NiceDateify';
 import { Card, Icon, Image } from 'semantic-ui-react';
 
-const StarredItem = ({repo, openModal}) => {
+const StarredItem = ({repo}) => {
     const starredDate = repo.starred_at;
     const repoContent = repo.repo;
 
     return (
-        <Card onClick={() => { openModal(repo) } }>
+        <Card>
             <Card.Content>
                 <Card.Header>
-                    {repoContent.full_name}
+                    <a href={repoContent.html_url} target="_blank">{repoContent.full_name}</a>
                 </Card.Header>
             </Card.Content>
             <Image src={repoContent.owner.avatar_url} />

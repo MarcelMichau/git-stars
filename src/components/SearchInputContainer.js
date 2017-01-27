@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SearchInput from './SearchInput';
-import { updateUsername, searchUser } from '../actions';
+import { cleanState, updateUsername, fetchRepos, fetchAvatar } from '../actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -10,11 +10,17 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    resetSearch: () => {
+      dispatch(cleanState());
+    },
     updateUser: (value) => {
       dispatch(updateUsername(value));
     },
     onSearch: (username) => {
-      dispatch(searchUser(username));
+      dispatch(fetchRepos(username));
+    },
+    updateAvatar: (username) => {
+      dispatch(fetchAvatar(username));
     }
   }
 };

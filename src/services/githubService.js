@@ -5,7 +5,7 @@ const headers = new Headers({
 });
 
 export async function getUserStarredRepos(username, pageCount) {
-    return await fetch(`${API_BASE}users/${username}/starred?page=${pageCount}`, {headers});
+    return await fetch(`${API_BASE}users/${username}/starred?page=${pageCount}`, { headers });
 }
 
 export async function getUserAvatar(username) {
