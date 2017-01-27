@@ -1,13 +1,6 @@
 import React from 'react';
-
-const avatarStyles = {
-    avatarImage: {
-        borderRadius: '40px'
-    }
-}
+import { Image } from 'semantic-ui-react'
 
 export default function GithubAvatar({ avatarUrl }) {
-    return (
-        <div>{avatarUrl && <img src={avatarUrl} alt="avatar" height="75" style={avatarStyles.avatarImage}/>}</div>
-    );
+    return <span>{avatarUrl && <Image src={avatarUrl} size="tiny" shape="circular" />}</span>
 }

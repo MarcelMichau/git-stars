@@ -30,7 +30,7 @@ const StarredItem = ({repo, openModal}) => {
             </Card.Content>
             <Card.Content extra>
                 <span>
-                    <Icon name="file code outline" />
+                    <Icon name="code" />
                     {repoContent.language ? <span>{repoContent.language}</span> : <span>Unknown</span>}
                 </span>
             </Card.Content>
