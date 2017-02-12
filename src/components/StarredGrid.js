@@ -9,4 +9,4 @@ export default function StarredGrid({openModal, starredRepos}) {
             }
         </div>
     );
-}
+};

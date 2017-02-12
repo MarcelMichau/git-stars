@@ -8,5 +8,5 @@ export default function AppNavBar() {
             <Menu.Item name="home" onClick={(e) => console.log('Clicked on menu tab')} />
         </Menu>
     );
-}
+};
 

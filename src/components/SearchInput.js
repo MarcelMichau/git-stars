@@ -22,4 +22,4 @@ export default function SearchInput({resetSearch, username, updateUser, onSearch
             <Button primary type="submit" content="Search Github" icon="search" labelPosition="right" />
         </Form>
     );
-}
+};

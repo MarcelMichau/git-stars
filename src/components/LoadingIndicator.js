@@ -37,4 +37,4 @@ export default function LoadingIndicator() {
             <div style={style}><Halogen.PacmanLoader color={color} /></div>
         </div>
     );
-}
+};

@@ -6,7 +6,7 @@ const initialState = {
     isLoading: false,
     currentPage: 1,
     repos: []
-}
+};
 
 export default function gitStarsApp(state = initialState, action) {
     switch (action.type) {
@@ -48,4 +48,4 @@ export default function gitStarsApp(state = initialState, action) {
         default:
             return state;
     }
-}
+};
