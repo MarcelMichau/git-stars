@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import StarredGrid from './StarredGrid';
 import InputWithAvatar from './InputWithAvatar';
 import LoadingIndicator from './LoadingIndicator';
@@ -38,6 +38,14 @@ const Stars = ({username, isLoading, avatarUrl, repos, loadMoreRepos}) => {
             }
         </div>
     );
+};
+
+Stars.propTypes = {
+    username: PropTypes.string.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    avatarUrl: PropTypes.string.isRequired,
+    repos: PropTypes.array.isRequired,
+    loadMoreRepos: PropTypes.func.isRequired
 };
 
 export default Stars;

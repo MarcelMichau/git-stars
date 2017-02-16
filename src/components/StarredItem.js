@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import NiceDateify from './NiceDateify';
 import { Card, Icon, Image } from 'semantic-ui-react';
 
@@ -36,6 +36,22 @@ const StarredItem = ({repo}) => {
             </Card.Content>
         </Card>
     );
+};
+
+StarredItem.propTypes = {
+    repo: PropTypes.shape({
+        starred_at: PropTypes.string.isRequired,
+        repo: PropTypes.shape({
+            html_url: PropTypes.string.isRequired,
+            full_name: PropTypes.string.isRequired,
+            stargazers_count: PropTypes.number.isRequired,
+            description: PropTypes.string.isRequired,
+            language: PropTypes.string,
+            owner: PropTypes.shape({
+                avatar_url: PropTypes.string.isRequired
+            }).isRequired
+        }).isRequired
+    }).isRequired
 };
 
 export default StarredItem;

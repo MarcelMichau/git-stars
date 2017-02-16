@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Button, Form } from 'semantic-ui-react';
 
 export default function SearchInput({resetSearch, username, updateUser, onSearch, updateAvatar}) {
@@ -22,4 +22,12 @@ export default function SearchInput({resetSearch, username, updateUser, onSearch
             <Button primary type="submit" content="Search Github" icon="search" labelPosition="right" />
         </Form>
     );
+};
+
+SearchInput.propTypes = {
+    resetSearch: PropTypes.func.isRequired,
+    username: PropTypes.string.isRequired,
+    updateUser: PropTypes.func.isRequired,
+    onSearch: PropTypes.func.isRequired,
+    updateAvatar: PropTypes.func.isRequired
 };

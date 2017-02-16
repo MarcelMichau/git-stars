@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import SearchInputContainer from './SearchInputContainer';
 import GithubAvatar from './GithubAvatar';
 import { Container, Grid } from 'semantic-ui-react';
@@ -20,6 +20,10 @@ const InputWithAvatar = props => {
             </Grid>
         </Container>
     );
+};
+
+InputWithAvatar.propTypes = {
+    avatarUrl: PropTypes.string.isRequired
 };
 
 export default InputWithAvatar;
