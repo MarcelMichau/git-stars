@@ -1,30 +1,25 @@
 import { connect } from 'react-redux';
 import SearchInput from './SearchInput';
-import { cleanState, updateUsername, fetchRepos, fetchAvatar } from '../actions';
+import {
+	cleanState,
+	updateUsername,
+	requestRepos,
+	requestAvatar
+} from '../actions';
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    username: state.username
-  }
+const mapStateToProps = (state, ownProps) => ({
+	username: state.username
+});
+
+const mapDispatchToProps = {
+	resetSearch: cleanState,
+	updateUser: updateUsername,
+	onSearch: requestRepos,
+	updateAvatar: requestAvatar
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    resetSearch: () => {
-      dispatch(cleanState());
-    },
-    updateUser: (value) => {
-      dispatch(updateUsername(value));
-    },
-    onSearch: (username) => {
-      dispatch(fetchRepos(username));
-    },
-    updateAvatar: (username) => {
-      dispatch(fetchAvatar(username));
-    }
-  }
-};
-
-const SearchInputContainer = connect(mapStateToProps, mapDispatchToProps)(SearchInput);
+const SearchInputContainer = connect(mapStateToProps, mapDispatchToProps)(
+	SearchInput
+);
 
 export default SearchInputContainer;

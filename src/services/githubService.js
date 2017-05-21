@@ -1,17 +1,12 @@
-const API_BASE = 'https://api.github.com/';
+import axios from 'axios';
 
-const headers = new Headers({
-    'Accept': 'application/vnd.github.v3.star+json'
+const githubApi = axios.create({
+	baseURL: 'https://api.github.com/',
+	headers: { Accept: 'application/vnd.github.v3.star+json' }
 });
 
-export async function getUserStarredRepos(username, pageCount) {
-    return await fetch(`${API_BASE}users/${username}/starred?page=${pageCount}`, { headers });
-}
+export const getUserStarredRepos = async (username, pageCount) =>
+	await githubApi.get(`users/${username}/starred?page=${pageCount}`);
 
-export async function getUserAvatar(username) {
-    return await fetch(`${API_BASE}users/${username}`);
-}
-
-export async function getRepoReadme(username, repoName) {
-    return await fetch(`${API_BASE}repos/${username}/${repoName}/readme`);
-}
+export const getUserAvatar = async username =>
+	await githubApi.get(`users/${username}`);

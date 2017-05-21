@@ -1,10 +1,15 @@
-import React, { PropTypes } from 'react';
-import { Image } from 'semantic-ui-react'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Image } from 'semantic-ui-react';
 
-export default function GithubAvatar({ avatarUrl }) {
-    return <span>{avatarUrl && <Image src={avatarUrl} size="tiny" shape="circular" />}</span>
-};
+const GithubAvatar = ({ avatarUrl }) => (
+	<span>
+		{avatarUrl && <Image src={avatarUrl} size="tiny" shape="circular" />}
+	</span>
+);
 
 GithubAvatar.propTypes = {
-    avatarUrl: PropTypes.string.isRequired
+	avatarUrl: PropTypes.string.isRequired
 };
+
+export default GithubAvatar;

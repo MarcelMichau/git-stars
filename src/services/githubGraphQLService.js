@@ -1,19 +1,19 @@
 const API_BASE = 'https://api.github.com/graphql';
 
 const headers = new Headers({
-    'Authorization': ''
+	Authorization: ''
 });
 
 const query = {
-    query: "query { viewer { login starredRepositories(first: 30) { totalCount edges { starredAt node { name owner { login } description} } }  }}"
-}
+	query: 'query { viewer { login starredRepositories(first: 30) { totalCount edges { starredAt node { name owner { login } description} } }  }}'
+};
 
 const init = {
-    method: 'POST',
-    body: JSON.stringify(query),
-    headers
-}
+	method: 'POST',
+	body: JSON.stringify(query),
+	headers
+};
 
 export async function getData() {
-    return await fetch(API_BASE, init);
+	return await fetch(API_BASE, init);
 }
