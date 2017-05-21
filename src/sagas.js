@@ -1,12 +1,4 @@
-import {
-	call,
-	put,
-	takeEvery,
-	select,
-	takeLatest,
-	fork,
-	take
-} from 'redux-saga/effects';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
 import {
 	REQUEST_REPOS,
 	REQUEST_AVATAR,
