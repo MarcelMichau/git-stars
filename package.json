@@ -32,6 +32,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "homepage": "https://marcelmichau.github.io/git-stars"
+  }
 }
