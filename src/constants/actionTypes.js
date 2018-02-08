@@ -1,0 +1,7 @@
+export const CLEAN_STATE = 'CLEAN_STATE';
+export const UPDATE_USER = 'UPDATE_USER';
+export const LOAD_MORE_REPOS = 'LOAD_MORE_REPOS';
+export const REQUEST_REPOS = 'REQUEST_REPOS';
+export const RECEIVE_REPOS = 'RECEIVE_REPOS';
+export const REQUEST_AVATAR = 'REQUEST_AVATAR';
+export const RECEIVE_AVATAR = 'RECEIVE_AVATAR';

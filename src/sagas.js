@@ -1,12 +1,6 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
-import {
-	REQUEST_REPOS,
-	REQUEST_AVATAR,
-	LOAD_MORE_REPOS,
-	requestRepos,
-	receiveRepos,
-	receiveAvatar
-} from './actions';
+import * as actionTypes from './constants/actionTypes';
+import { requestRepos, receiveRepos, receiveAvatar } from './actions';
 import { getUserStarredRepos, getUserAvatar } from './services/githubService';
 
 function* fetchRepos(action) {
@@ -40,7 +34,7 @@ function* loadMoreRepos(action) {
 }
 
 export default function* rootSaga() {
-	yield takeLatest(REQUEST_REPOS, fetchRepos);
-	yield takeLatest(REQUEST_AVATAR, fetchAvatar);
-	yield takeLatest(LOAD_MORE_REPOS, loadMoreRepos);
+	yield takeLatest(actionTypes.REQUEST_REPOS, fetchRepos);
+	yield takeLatest(actionTypes.REQUEST_AVATAR, fetchAvatar);
+	yield takeLatest(actionTypes.LOAD_MORE_REPOS, loadMoreRepos);
 }

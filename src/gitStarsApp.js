@@ -1,12 +1,4 @@
-import {
-	CLEAN_STATE,
-	UPDATE_USER,
-	LOAD_MORE_REPOS,
-	REQUEST_REPOS,
-	RECEIVE_REPOS,
-	REQUEST_AVATAR,
-	RECEIVE_AVATAR
-} from './actions';
+import * as actionTypes from './constants/actionTypes';
 
 const initialState = {
 	username: '',
@@ -18,7 +10,7 @@ const initialState = {
 
 function gitStarsApp(state = initialState, action) {
 	switch (action.type) {
-		case CLEAN_STATE:
+		case actionTypes.CLEAN_STATE:
 			return {
 				...state,
 				repos: [],
@@ -26,35 +18,35 @@ function gitStarsApp(state = initialState, action) {
 				isLoading: false
 			};
 
-		case UPDATE_USER:
+		case actionTypes.UPDATE_USER:
 			return {
 				...state,
 				username: action.value
 			};
 
-		case LOAD_MORE_REPOS:
+		case actionTypes.LOAD_MORE_REPOS:
 			return {
 				...state,
 				currentPage: state.currentPage + 1
 			};
 
-		case REQUEST_REPOS:
+		case actionTypes.REQUEST_REPOS:
 			return {
 				...state,
 				isLoading: true
 			};
 
-		case RECEIVE_REPOS:
+		case actionTypes.RECEIVE_REPOS:
 			return {
 				...state,
 				isLoading: false,
 				repos: [...state.repos, ...action.repos]
 			};
 
-		case REQUEST_AVATAR:
+		case actionTypes.REQUEST_AVATAR:
 			return state;
 
-		case RECEIVE_AVATAR:
+		case actionTypes.RECEIVE_AVATAR:
 			return {
 				...state,
 				avatarUrl: action.avatar

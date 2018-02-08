@@ -1,5 +1,5 @@
 import React from 'react';
-import Halogen from 'halogen';
+import { SyncLoader } from 'halogenium';
 
 const LoadingIndicator = () => {
 	const color = '#2185D0';
@@ -36,7 +36,7 @@ const LoadingIndicator = () => {
 				flexWrap: 'wrap'
 			}}
 		>
-			<div style={style}><Halogen.PacmanLoader color={color} /></div>
+			<div style={style}><SyncLoader color={color} /></div>
 		</div>
 	);
 };

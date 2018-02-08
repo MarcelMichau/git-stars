@@ -1,41 +1,35 @@
-export const CLEAN_STATE = 'CLEAN_STATE';
-export const UPDATE_USER = 'UPDATE_USER';
-export const LOAD_MORE_REPOS = 'LOAD_MORE_REPOS';
-export const REQUEST_REPOS = 'REQUEST_REPOS';
-export const RECEIVE_REPOS = 'RECEIVE_REPOS';
-export const REQUEST_AVATAR = 'REQUEST_AVATAR';
-export const RECEIVE_AVATAR = 'RECEIVE_AVATAR';
+import * as actionTypes from './constants/actionTypes';
 
 export const cleanState = value => ({
-	type: CLEAN_STATE
+	type: actionTypes.CLEAN_STATE
 });
 
 export const updateUsername = value => ({
-	type: UPDATE_USER,
+	type: actionTypes.UPDATE_USER,
 	value
 });
 
 export const loadMoreRepos = username => ({
-	type: LOAD_MORE_REPOS,
+	type: actionTypes.LOAD_MORE_REPOS,
 	value: username
 });
 
 export const requestRepos = username => ({
-	type: REQUEST_REPOS,
+	type: actionTypes.REQUEST_REPOS,
 	value: username
 });
 
 export const receiveRepos = (username, repos) => ({
-	type: RECEIVE_REPOS,
+	type: actionTypes.RECEIVE_REPOS,
 	repos: repos
 });
 
 export const requestAvatar = username => ({
-	type: REQUEST_AVATAR,
+	type: actionTypes.REQUEST_AVATAR,
 	value: username
 });
 
 export const receiveAvatar = (username, avatar) => ({
-	type: RECEIVE_AVATAR,
+	type: actionTypes.RECEIVE_AVATAR,
 	avatar: avatar.avatar_url
 });

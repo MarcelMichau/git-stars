@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-import { Menu, Button } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 
 const NavbarMenuItem = ({ label, to, activeOnlyWhenExact }) => (
 	<Route
@@ -19,19 +19,6 @@ const AppNavBar = () => (
 		<Menu.Item header>Git Stars</Menu.Item>
 		<NavbarMenuItem activeOnlyWhenExact={true} to="/" label="Home" />
 		<NavbarMenuItem to="/about" label="About" />
-		<Menu.Menu position="right">
-			<Menu.Item>
-				<a href="http://localhost:3001/auth">
-					<Button
-						basic
-						color="green"
-						content="Sign In with GitHub"
-						icon="github"
-						labelPosition="left"
-					/>
-				</a>
-			</Menu.Item>
-		</Menu.Menu>
 	</Menu>
 );
 

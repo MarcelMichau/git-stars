@@ -5,7 +5,7 @@ import { Card, Icon, Image } from 'semantic-ui-react';
 
 const StarredItem = ({
 	repo: { starred_at: starredDate, repo: repoContent }
-}) => (
+}) =>
 	<Card>
 		<Card.Content>
 			<Card.Header>
@@ -41,8 +41,7 @@ const StarredItem = ({
 					: <span>Unknown</span>}
 			</span>
 		</Card.Content>
-	</Card>
-);
+	</Card>;
 
 StarredItem.propTypes = {
 	repo: PropTypes.shape({

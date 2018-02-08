@@ -3,24 +3,25 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "gh-pages": "^1.0.0",
-    "react-scripts": "^1.0.2"
+    "@storybook/react": "^3.3.12",
+    "gh-pages": "^1.1.0",
+    "react-scripts": "^1.1.0"
   },
   "dependencies": {
-    "axios": "^0.16.1",
-    "halogen": "^0.2.0",
-    "moment": "^2.18.1",
-    "prop-types": "^15.5.10",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-loadable": "^3.3.1",
-    "react-redux": "^5.0.5",
-    "react-router-dom": "^4.1.1",
-    "redux": "^3.6.0",
-    "redux-saga": "^0.15.3",
-    "redux-thunk": "^2.2.0",
-    "semantic-ui-css": "^2.2.10",
-    "semantic-ui-react": "^0.68.3"
+    "axios": "^0.17.1",
+    "cypress": "^1.4.2",
+    "halogenium": "^2.2.3",
+    "moment": "^2.20.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-loadable": "^5.3.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.16.0",
+    "semantic-ui-css": "^2.2.14",
+    "semantic-ui-react": "^0.78.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,7 +29,9 @@
     "eject": "react-scripts eject",
     "test": "react-scripts test --env=jsdom",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
