@@ -5,7 +5,7 @@ import { Card, Icon, Image } from 'semantic-ui-react';
 
 const StarredItem = ({
 	repo: { starred_at: starredDate, repo: repoContent }
-}) =>
+}) => (
 	<Card>
 		<Card.Content>
 			<Card.Header>
@@ -29,19 +29,20 @@ const StarredItem = ({
 					Starred on: <NiceDateify date={starredDate} />
 				</span>
 			</Card.Meta>
-			<Card.Description>
-				{repoContent.description}
-			</Card.Description>
+			<Card.Description>{repoContent.description}</Card.Description>
 		</Card.Content>
 		<Card.Content extra>
 			<span>
 				<Icon name="code" />
-				{repoContent.language
-					? <span>{repoContent.language}</span>
-					: <span>Unknown</span>}
+				{repoContent.language ? (
+					<span>{repoContent.language}</span>
+				) : (
+					<span>Unknown</span>
+				)}
 			</span>
 		</Card.Content>
-	</Card>;
+	</Card>
+);
 
 StarredItem.propTypes = {
 	repo: PropTypes.shape({

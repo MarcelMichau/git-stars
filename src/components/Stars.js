@@ -32,12 +32,13 @@ const Stars = ({ username, isLoading, avatarUrl, repos, loadMoreRepos }) => {
 			<InputWithAvatar avatarUrl={avatarUrl} />
 			{repos.length > 0 && <StarredGrid starredRepos={repos} />}
 			{isLoading && <LoadingIndicator />}
-			{hasMoreThanDefaultNumberOfRepos &&
+			{hasMoreThanDefaultNumberOfRepos && (
 				<div style={starsStyles.center}>
 					<Button onClick={loadMore} style={starsStyles.loadMoreButton}>
 						Load More
 					</Button>
-				</div>}
+				</div>
+			)}
 		</div>
 	);
 };

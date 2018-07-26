@@ -18,8 +18,9 @@ const mapDispatchToProps = {
 	updateAvatar: requestAvatar
 };
 
-const SearchInputContainer = connect(mapStateToProps, mapDispatchToProps)(
-	SearchInput
-);
+const SearchInputContainer = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(SearchInput);
 
 export default SearchInputContainer;

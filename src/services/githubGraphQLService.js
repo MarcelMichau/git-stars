@@ -5,7 +5,8 @@ const headers = new Headers({
 });
 
 const query = {
-	query: 'query { viewer { login starredRepositories(first: 30) { totalCount edges { starredAt node { name owner { login } description} } }  }}'
+	query:
+		'query { viewer { login starredRepositories(first: 30) { totalCount edges { starredAt node { name owner { login } description} } }  }}'
 };
 
 const init = {

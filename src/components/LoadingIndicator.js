@@ -36,7 +36,9 @@ const LoadingIndicator = () => {
 				flexWrap: 'wrap'
 			}}
 		>
-			<div style={style}><SyncLoader color={color} /></div>
+			<div style={style}>
+				<SyncLoader color={color} />
+			</div>
 		</div>
 	);
 };

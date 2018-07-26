@@ -13,6 +13,9 @@ const mapDispatchToProps = {
 	loadMoreRepos
 };
 
-const StarsContainer = connect(mapStateToProps, mapDispatchToProps)(Stars);
+const StarsContainer = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Stars);
 
 export default StarsContainer;
