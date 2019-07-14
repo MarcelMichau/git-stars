@@ -6,43 +6,43 @@ import { Card, Icon, Image } from 'semantic-ui-react';
 const StarredItem = ({
 	repo: { starred_at: starredDate, repo: repoContent }
 }) => (
-		<Card>
-			<Card.Content>
-				<Card.Header>
-					<a
-						href={repoContent.html_url}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						{repoContent.full_name}
-					</a>
-				</Card.Header>
-			</Card.Content>
-			<Image src={repoContent.owner.avatar_url} />
-			<Card.Content>
-				<span className="right floated">
-					<i className="star icon" aria-hidden="true" />
-					<span>{repoContent.stargazers_count}</span>
+	<Card>
+		<Card.Content>
+			<Card.Header>
+				<a
+					href={repoContent.html_url}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{repoContent.full_name}
+				</a>
+			</Card.Header>
+		</Card.Content>
+		<Image src={repoContent.owner.avatar_url} />
+		<Card.Content>
+			<span className="right floated">
+				<i className="star icon" aria-hidden="true" />
+				<span>{repoContent.stargazers_count}</span>
+			</span>
+			<Card.Meta>
+				<span className="date">
+					Starred on: <NiceDateify date={starredDate} />
 				</span>
-				<Card.Meta>
-					<span className="date">
-						Starred on: <NiceDateify date={starredDate} />
-					</span>
-				</Card.Meta>
-				<Card.Description>{repoContent.description}</Card.Description>
-			</Card.Content>
-			<Card.Content extra>
-				<span>
-					<Icon name="code" />
-					{repoContent.language ? (
-						<span>{repoContent.language}</span>
-					) : (
-							<span>Unknown</span>
-						)}
-				</span>
-			</Card.Content>
-		</Card>
-	);
+			</Card.Meta>
+			<Card.Description>{repoContent.description}</Card.Description>
+		</Card.Content>
+		<Card.Content extra>
+			<span>
+				<Icon name="code" />
+				{repoContent.language ? (
+					<span>{repoContent.language}</span>
+				) : (
+					<span>Unknown</span>
+				)}
+			</span>
+		</Card.Content>
+	</Card>
+);
 
 StarredItem.propTypes = {
 	repo: PropTypes.shape({
