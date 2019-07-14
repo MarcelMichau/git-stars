@@ -51,7 +51,7 @@ StarredItem.propTypes = {
 			html_url: PropTypes.string.isRequired,
 			full_name: PropTypes.string.isRequired,
 			stargazers_count: PropTypes.number.isRequired,
-			description: PropTypes.string.isRequired,
+			description: PropTypes.string,
 			language: PropTypes.string,
 			owner: PropTypes.shape({
 				avatar_url: PropTypes.string.isRequired

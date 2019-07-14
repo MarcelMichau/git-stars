@@ -4,7 +4,9 @@ import StarredItem from './StarredItem';
 
 const StarredGrid = ({ starredRepos }) => (
 	<div className="ui centered link cards">
-		{starredRepos.map(repo => <StarredItem key={repo.repo.id} repo={repo} />)}
+		{starredRepos.map(repo => (
+			<StarredItem key={repo.repo.id} repo={repo} />
+		))}
 	</div>
 );
 

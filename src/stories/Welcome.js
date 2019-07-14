@@ -74,8 +74,7 @@ export default class Welcome extends React.Component {
 					<a style={styles.link} href="#" onClick={this.showApp.bind(this)}>
 						stories
 					</a>{' '}
-					for a component called <code style={styles.code}>Button</code>
-					.
+					for a component called <code style={styles.code}>Button</code>.
 				</p>
 				<p>
 					Just like that, you can add your own components as stories.
@@ -88,7 +87,8 @@ export default class Welcome extends React.Component {
 					dangerouslySetInnerHTML={{ __html: `<pre>${codeBlock}</pre>` }}
 				/>
 				<p>
-					Usually we create stories with smaller UI components in the app.<br />
+					Usually we create stories with smaller UI components in the app.
+					<br />
 					Have a look at the{' '}
 					<a
 						style={styles.link}
