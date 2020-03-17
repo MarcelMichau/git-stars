@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "cypress": "^3.4.1",
+    "cypress": "^4.2.0",
     "halogenium": "^2.2.3",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
