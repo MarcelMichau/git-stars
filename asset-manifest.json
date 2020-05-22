@@ -1,22 +1,29 @@
 {
   "files": {
-    "main.js": "/git-stars/static/js/main.e44088b9.chunk.js",
-    "main.js.map": "/git-stars/static/js/main.e44088b9.chunk.js.map",
-    "runtime~main.js": "/git-stars/static/js/runtime~main.cafc8570.js",
-    "runtime~main.js.map": "/git-stars/static/js/runtime~main.cafc8570.js.map",
-    "static/css/2.f39c207c.chunk.css": "/git-stars/static/css/2.f39c207c.chunk.css",
-    "static/js/2.33420845.chunk.js": "/git-stars/static/js/2.33420845.chunk.js",
-    "static/js/2.33420845.chunk.js.map": "/git-stars/static/js/2.33420845.chunk.js.map",
-    "static/js/3.866cd774.chunk.js": "/git-stars/static/js/3.866cd774.chunk.js",
-    "static/js/3.866cd774.chunk.js.map": "/git-stars/static/js/3.866cd774.chunk.js.map",
-    "static/js/4.6fe5b534.chunk.js": "/git-stars/static/js/4.6fe5b534.chunk.js",
-    "static/js/4.6fe5b534.chunk.js.map": "/git-stars/static/js/4.6fe5b534.chunk.js.map",
-    "static/js/5.024bab22.chunk.js": "/git-stars/static/js/5.024bab22.chunk.js",
-    "static/js/5.024bab22.chunk.js.map": "/git-stars/static/js/5.024bab22.chunk.js.map",
+    "main.js": "/git-stars/static/js/main.d99bbaf9.chunk.js",
+    "main.js.map": "/git-stars/static/js/main.d99bbaf9.chunk.js.map",
+    "runtime-main.js": "/git-stars/static/js/runtime-main.768ce91e.js",
+    "runtime-main.js.map": "/git-stars/static/js/runtime-main.768ce91e.js.map",
+    "static/css/2.474b823d.chunk.css": "/git-stars/static/css/2.474b823d.chunk.css",
+    "static/js/2.cbc421b4.chunk.js": "/git-stars/static/js/2.cbc421b4.chunk.js",
+    "static/js/2.cbc421b4.chunk.js.map": "/git-stars/static/js/2.cbc421b4.chunk.js.map",
+    "static/js/3.3b04ec86.chunk.js": "/git-stars/static/js/3.3b04ec86.chunk.js",
+    "static/js/3.3b04ec86.chunk.js.map": "/git-stars/static/js/3.3b04ec86.chunk.js.map",
+    "static/js/4.52330e8b.chunk.js": "/git-stars/static/js/4.52330e8b.chunk.js",
+    "static/js/4.52330e8b.chunk.js.map": "/git-stars/static/js/4.52330e8b.chunk.js.map",
+    "static/js/5.4278ea99.chunk.js": "/git-stars/static/js/5.4278ea99.chunk.js",
+    "static/js/5.4278ea99.chunk.js.map": "/git-stars/static/js/5.4278ea99.chunk.js.map",
     "index.html": "/git-stars/index.html",
-    "precache-manifest.8abaa233b8e4d980ec23d13eed1194a6.js": "/git-stars/precache-manifest.8abaa233b8e4d980ec23d13eed1194a6.js",
+    "precache-manifest.8ed0b5a7df9935be27ddbf59ab68cf91.js": "/git-stars/precache-manifest.8ed0b5a7df9935be27ddbf59ab68cf91.js",
     "service-worker.js": "/git-stars/service-worker.js",
-    "static/css/2.f39c207c.chunk.css.map": "/git-stars/static/css/2.f39c207c.chunk.css.map",
+    "static/css/2.474b823d.chunk.css.map": "/git-stars/static/css/2.474b823d.chunk.css.map",
+    "static/js/2.cbc421b4.chunk.js.LICENSE.txt": "/git-stars/static/js/2.cbc421b4.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/git-stars/static/media/outline-icons.ef60a4f6.woff"
-  }
+  },
+  "entrypoints": [
+    "static/js/runtime-main.768ce91e.js",
+    "static/css/2.474b823d.chunk.css",
+    "static/js/2.cbc421b4.chunk.js",
+    "static/js/main.d99bbaf9.chunk.js"
+  ]
 }

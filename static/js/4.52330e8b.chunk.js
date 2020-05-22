@@ -1,0 +1,2 @@
+(this["webpackJsonpgit-stars"]=this["webpackJsonpgit-stars"]||[]).push([[4],{402:function(t,s,e){"use strict";e.r(s);var a=e(0),i=e.n(a);s.default=function(){return i.a.createElement("div",null,"This is the about page")}}}]);
+//# sourceMappingURL=4.52330e8b.chunk.js.map

@@ -1,35 +1,39 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "50f254afca73d1ee057f22ca40cc2f98",
+    "revision": "95dc537a40698ba46b94181e304a5157",
     "url": "/git-stars/index.html"
   },
   {
-    "revision": "915f58b55463d7de8f55",
-    "url": "/git-stars/static/css/2.f39c207c.chunk.css"
+    "revision": "0beabdecf1f023ecad7d",
+    "url": "/git-stars/static/css/2.474b823d.chunk.css"
   },
   {
-    "revision": "915f58b55463d7de8f55",
-    "url": "/git-stars/static/js/2.33420845.chunk.js"
+    "revision": "0beabdecf1f023ecad7d",
+    "url": "/git-stars/static/js/2.cbc421b4.chunk.js"
   },
   {
-    "revision": "33df613259bea6717457",
-    "url": "/git-stars/static/js/3.866cd774.chunk.js"
+    "revision": "4d47ffde3dc69784e8e23fd910817ef8",
+    "url": "/git-stars/static/js/2.cbc421b4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7f81a5bb0f147a6e4cf8",
-    "url": "/git-stars/static/js/4.6fe5b534.chunk.js"
+    "revision": "757961cb40a0c51be618",
+    "url": "/git-stars/static/js/3.3b04ec86.chunk.js"
   },
   {
-    "revision": "86c9d619b929a74d6097",
-    "url": "/git-stars/static/js/5.024bab22.chunk.js"
+    "revision": "872e7f73c71fc90a705e",
+    "url": "/git-stars/static/js/4.52330e8b.chunk.js"
   },
   {
-    "revision": "fc24334faf025564c019",
-    "url": "/git-stars/static/js/main.e44088b9.chunk.js"
+    "revision": "e4e16898abd80e081f67",
+    "url": "/git-stars/static/js/5.4278ea99.chunk.js"
   },
   {
-    "revision": "777138f3c19775d6fd14",
-    "url": "/git-stars/static/js/runtime~main.cafc8570.js"
+    "revision": "70c2720456e85b3e2e52",
+    "url": "/git-stars/static/js/main.d99bbaf9.chunk.js"
+  },
+  {
+    "revision": "2d7767b68791cc8666e2",
+    "url": "/git-stars/static/js/runtime-main.768ce91e.js"
   },
   {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
