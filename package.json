@@ -9,7 +9,7 @@
 		"react-scripts": "^3.4.1"
 	},
 	"dependencies": {
-		"axios": "^0.19.2",
+		"axios": "^0.21.3",
 		"cypress": "^4.12.0",
 		"halogenium": "^2.3.0",
 		"moment": "^2.26.0",
