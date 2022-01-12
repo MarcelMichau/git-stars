@@ -9,8 +9,8 @@
 		"react-scripts": "^3.4.1"
 	},
 	"dependencies": {
-		"axios": "^0.19.2",
-		"cypress": "^4.12.0",
+		"axios": "^0.20.0",
+		"cypress": "^6.6.0",
 		"halogenium": "^2.3.0",
 		"moment": "^2.26.0",
 		"prop-types": "^15.7.2",
